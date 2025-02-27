@@ -1,0 +1,60 @@
+{
+  "martech_best_practices": [
+    {
+      "category": "Data Integration",
+      "name": "Google Ads as a Segment Source ❌",
+      "description": "Do not set up Google Ads as a Segment source for e-commerce businesses.",
+      "reasoning": "Leads to data discrepancies and limited event tracking.",
+      "preferred_alternative": "Use Google Ads API or BigQuery instead.",
+      "notes": "May be acceptable for certain B2B use cases."
+    },
+    {
+      "category": "Behavioral Analytics",
+      "name": "Define Key Events Before Choosing a Tool ✅",
+      "description": "Establish key behavioral events before selecting an analytics platform.",
+      "reasoning": "Ensures that tool selection aligns with business needs rather than vice versa.",
+      "preferred_alternative": "Create a tracking plan before implementation.",
+      "notes": "This is critical for growth-stage companies."
+    },
+    {
+      "category": "CDP Setup",
+      "name": "Use Server-Side GTM for First-Party Data ✅",
+      "description": "Prioritize server-side tagging over client-side for better data control.",
+      "reasoning": "Reduces reliance on third-party cookies and improves data accuracy.",
+      "preferred_alternative": "GTM server-side with Cloudflare Workers.",
+      "notes": "Requires engineering support for implementation."
+    }
+  ],
+  "tracking_taxonomies": [
+    {
+      "event_name": "Product Viewed",
+      "description": "Triggered when a user views a product page.",
+      "required_properties": ["product_id", "category", "price"],
+      "notes": "Important for e-commerce analytics."
+    },
+    {
+      "event_name": "Checkout Started",
+      "description": "Triggered when a user starts the checkout process.",
+      "required_properties": ["cart_items", "total_value"],
+      "notes": "Used for conversion tracking."
+    },
+    {
+      "event_name": "Subscription Canceled",
+      "description": "Triggered when a user cancels their subscription.",
+      "required_properties": ["subscription_id", "cancel_reason"],
+      "notes": "Critical for churn analysis."
+    }
+  ],
+  "tool_diagrams": [
+    {
+      "name": "Basic CDP Setup",
+      "description": "How user data flows through a CDP",
+      "diagram": "User → CDP → Analytics → Marketing Automation"
+    },
+    {
+      "name": "Lifecycle Marketing Funnel",
+      "description": "Stages of user engagement and retention.",
+      "diagram": "Awareness → Activation → Retention → Revenue → Referral"
+    }
+  ]
+}
